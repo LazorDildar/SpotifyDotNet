@@ -95,7 +95,7 @@ namespace SpotifyDotNet {
     /// Find a page of tracks by keyword.
     /// </summary>
     public static async Task<Page<SimpleTrack>> SearchAsync(
-      string keywords, int offset=0, int limit=20, string country="US") {
+      string keywords, int offset = 0, int limit = 20, string country = "US") {
 
       return await SearchAsync<SimpleTrack>(keywords, "track", offset, limit, country);
     }
@@ -138,6 +138,16 @@ namespace SpotifyDotNet {
 
       return await SearchAsync<Track>(keywords, "track", offset, limit, country);
     }
+  }
 
+  public class PlaylistTrack : SpotifyBaseObject {
+    [JsonProperty("track")]
+    public Track Track { get; set; }
+    [JsonProperty("added_by")]
+    public PublicUser AddedBy { get; set; }
+    [JsonProperty("is_local")]
+    public bool IsLocal { get; set; }
+    //[JsonProperty("added_at") ]
+    //public Timestamp AddedAt { get; set; }
   }
 }
