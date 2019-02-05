@@ -10,7 +10,7 @@ namespace SpotifyDotNet {
   /// The public user profile from the Spotify Web API
   /// https://developer.spotify.com/documentation/web-api/reference-beta/#object-publicuserobject
   /// </summary>
-  public class PublicUser : SpotifyBaseObject {
+  public partial class PublicUser : SpotifyBaseObject {
     /// <summary>
     /// The Spotify user ID for this user.
     /// </summary>
@@ -25,7 +25,7 @@ namespace SpotifyDotNet {
     /// A link to the Web API endpoint for this user.
     /// </summary>
     [JsonProperty("href")]
-    public string Href { get; set; }
+    public Uri Href { get; set; }
     /// <summary>
     /// The object type: “user”
     /// </summary>
@@ -35,7 +35,7 @@ namespace SpotifyDotNet {
     /// The Spotify URI for this user.
     /// </summary>
     [JsonProperty("uri")]
-    public string SpotifyUri { get; set; }
+    public Uri SpotifyUri { get; set; }
 
     /* Excludes:
      * images : (image object)[]
@@ -61,5 +61,6 @@ namespace SpotifyDotNet {
         ConfigureAwait(false);
       return JsonConvert.DeserializeObject<PublicUser>(profile);
     }
+   
   }
 }

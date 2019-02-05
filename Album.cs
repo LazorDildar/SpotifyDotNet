@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Threading.Tasks;
 
 namespace SpotifyDotNet {
@@ -31,7 +32,7 @@ namespace SpotifyDotNet {
     /// A link to the Web API endpoint providing full details of the album.
     /// </summary>
     [JsonProperty("href")]
-    public string Href { get; set; }
+    public Uri Href { get; set; }
     /// <summary>
     /// The object type: “album”
     /// </summary>
@@ -41,7 +42,7 @@ namespace SpotifyDotNet {
     /// The Spotify URI for the album.
     /// </summary>
     [JsonProperty("uri")]
-    public string SpotifyUri { get; set; }
+    public Uri SpotifyUri { get; set; }
 
     /* Excludes:
      * album_group : string (optional) -> this only appears on SimpleAlbum in docs

@@ -36,7 +36,7 @@ namespace SpotifyDotNet {
     /// The Spotify URI for the artist.
     /// </summary>
     [JsonProperty("uri")]
-    public string SpotifyUri { get; set; }
+    public Uri SpotifyUri { get; set; }
 
     /* Excludes:
      * external_urls : external Url object

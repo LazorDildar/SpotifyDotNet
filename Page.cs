@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Threading.Tasks;
 
 namespace SpotifyDotNet {
@@ -42,7 +43,7 @@ namespace SpotifyDotNet {
     /// A link to the Web API endpoint returning the full result of the request
     /// </summary>
     [JsonProperty("href")]
-    public string Href { get; set; }
+    public Uri Href { get; set; }
 
     /// <summary>
     /// Retrieve the next page from Spotify API.
